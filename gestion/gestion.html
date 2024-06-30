@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión - SAES</title>
+    <link rel="stylesheet" href="../assets/css/gestion.css">
+    <script src="../assets/js/gestion.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Panel de Gestión</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#" onclick="showSection('agregar-alumnos')">Agregar Alumnos</a></li>
+            <li><a href="#" onclick="showSection('asignar-materias')">Asignar Materias</a></li>
+            <li><a href="#" onclick="showSection('perfil')">Perfil</a></li>
+        </ul>
+    </nav>
+    <main>
+        <section id="agregar-alumnos">
+            <h2>Agregar Alumnos</h2>
+            <form action="agregar_alumno.php" method="POST" enctype="multipart/form-data">
+                <label for="nombre-alumno">Nombre del Alumno:</label>
+                <input type="text" id="nombre-alumno" name="nombre-alumno" required>
+                <label for="boleta">Boleta:</label>
+                <input type="text" id="boleta" name="boleta" required>
+                <label for="contrasena">Contraseña:</label>
+                <input type="password" id="contrasena" name="contrasena" required>
+                <label for="edad">Edad:</label>
+                <input type="text" id="edad" name="edad" required>
+                <label for="foto-perfil">Foto de Perfil:</label>
+                <input type="file" id="foto-perfil" name="foto-perfil" accept="image/*">
+                <button type="submit">Agregar</button>
+            </form>
+        </section>
+        <section id="asignar-materias" style="display:none;">
+            <h2>Asignar Materias y Calificaciones</h2>
+            <form method="post" action="asignar_materias.php">
+                <label for="boleta">Boleta del Alumno:</label>
+                <input type="text" id="boleta" name="boleta" required>
+                <label for="materia">Materia:</label>
+                <input type="text" id="materia" name="materia" required>
+                <label for="parcial1">Parcial 1:</label>
+                <input type="text" id="parcial1" name="parcial1" required>
+                <label for="parcial2">Parcial 2:</label>
+                <input type="text" id="parcial2" name="parcial2" required>
+                <label for="parcial3">Parcial 3:</label>
+                <input type="text" id="parcial3" name="parcial3" required>
+                <button type="submit">Asignar</button>
+            </form>
+        </section>        
+        <section id="perfil" style="display:none;">
+            <h2>Perfil</h2>
+            <form action="cambiar_foto_perfil.php" method="POST" enctype="multipart/form-data">
+                <label for="foto-perfil">Foto de Perfil:</label>
+                <input type="file" id="foto-perfil" name="foto-perfil" accept="image/*">
+                <button type="submit">Cambiar Foto</button>
+            </form>
+        </section>
+    </main>
+    <img src="../assets/images/logo.png" alt="Imagen Inferior Izquierda" class="imagen-inferior-izquierda">
+</body>
+</html>

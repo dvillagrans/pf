@@ -1,0 +1,82 @@
+<!DOCTYPE html> 
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/a2dd6045c4.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <title>Login & Registro</title>
+</head>
+<body>
+    <header>
+        <h2 class="logo">SAES 2</h2>
+
+        <nav class="navegacion">
+            <a href="#">Inicio</a>
+
+            <button class="btn">Iniciar Sesión</button>
+        </nav>
+    </header>
+
+    <div class="fondo">
+        <span class="icono-cerrar"><i class="fa-solid fa-xmark"></i></span>
+
+        <div class="contenedor-form login">
+            <h2>Iniciar Sesión</h2>
+            <form action="login.php" method="POST"> 
+                <div class="contenedor-input">
+                    <span class="icono"><i class="fa-solid fa-envelope"></i></span>
+                    <input type="number" id="boleta" name="boleta" required>
+                    <label for="boleta">Boleta</label>
+                </div>
+        
+                <div class="contenedor-input">
+                    <span class="icono"><i class="fa-solid fa-lock"></i></span>
+                    <label for="contrasena">Contraseña:</label>
+                    <input type="password" id="contrasena" name="contrasena" required>
+                </div>
+        
+                <button type="submit" class="btn">Iniciar Sesión</button>
+        <!--
+                <div class="registrar">
+                    <p>¿No tienes una cuenta? <a href="#" class="registrar-link">Regístrate</a></p>
+                </div>
+        -->
+            </form> 
+        </div>
+        
+        <!--
+            <div class="contenedor-form registrar">
+                <h2>Registrarse</h2>
+                <form action="#">
+                <div class="contenedor-input">
+                    <span class="icono"><i class="fa-solid fa-user"></i></span>
+                    <input type="text" id="username" name="username" required>
+                    <label for="username">Nombre de Usuario</label>
+                </div>
+
+                <div class="contenedor-input">
+                    <span class="icono"><i class="fa-solid fa-envelope"></i></span>
+                    <input type="email" id="register-email" name="register-email" required>
+                    <label for="register-email">Correo Electrónico</label>
+                </div>
+
+                <div class="contenedor-input">
+                    <span class="icono"><i class="fa-solid fa-lock"></i></span>
+                    <input type="password" id="register-password" name="register-password" required>
+                    <label for="register-password">Contraseña</label>
+                </div>
+
+                <button type="submit" class="btn">Registrarse</button>
+
+                <div class="registrar">
+                    <p>¿Tienes una cuenta?<a href="#" class="login-link">Iniciar Sesión</a></p>
+                </div>
+                </form>
+            </div>
+        -->
+    </div>
+    <script src="assets/js/app.js" defer></script>
+    <img src="assets/images/logo.png" alt="Imagen Inferior Izquierda" class="imagen-inferior-izquierda">
+</body>
+</html>
