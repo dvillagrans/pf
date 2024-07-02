@@ -14,10 +14,10 @@
     session_start(); // Inicia la sesión al principio del archivo
 
     // Datos de conexión a MySQL
-    $host = "localhost";
+    $host = "servidorcit0.mysql.database.azure.com";
     $dbname = "escuela";
-    $user = "root";
-    $password = "";
+    $user = "alana";
+    $password = "Losdelaesquina5";
 
     // Crear la conexión
     $conn = new mysqli($host, $user, $password, $dbname);

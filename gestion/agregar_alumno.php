@@ -1,9 +1,9 @@
 <?php
 // Datos de conexión a MySQL
-$host = "localhost";
+$host = "servidorcit0.mysql.database.azure.com";
 $dbname = "escuela";
-$user = "root";
-$password = "";
+$user = "alana";
+$password = "Losdelaesquina5";
 
 // Crear la conexión
 $conn = new mysqli($host, $user, $password, $dbname);
@@ -23,14 +23,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Manejo de la foto de perfil
     $fotoPerfil = null;
-    if (isset($_FILES['foto-perfil']) && $_FILES['foto-perfil']['error'] === UPLOAD_ERR_OK) {
-        $fotoPerfil = file_get_contents($_FILES['foto-perfil']['tmp_name']);
+    if (isset($_FILES['FotoPerfil']) && $_FILES['FotoPerfil']['error'] === UPLOAD_ERR_OK) {
+        $fotoPerfil = file_get_contents($_FILES['FotoPerfil']['tmp_name']);
         $fotoPerfil = $conn->real_escape_string($fotoPerfil);
     }
 
     // Consulta para insertar el nuevo alumno
     $query = "INSERT INTO alumnos (Boleta, NombreCompleto, Contrasena, Edad, FotoPerfil) 
-              VALUES ('$boleta', '$nombre', '$contrasena', '$edad', '$fotoPerfil')";
+                            VALUES ('$boleta', '$nombre', '$contrasena', '$edad', '$fotoPerfil')";
 
     if ($conn->query($query) === TRUE) {
         $success_message = "Alumno agregado exitosamente.";
@@ -55,9 +55,9 @@ $conn->close();
 
 <body>
     <?php if (!empty($success_message)) : ?>
-    <p style="color: green;"><?php echo $success_message; ?></p>
+        <p style="color: green;"><?php echo $success_message; ?></p>
     <?php elseif (!empty($error_message)) : ?>
-    <p style="color: red;"><?php echo $error_message; ?></p>
+        <p style="color: red;"><?php echo $error_message; ?></p>
     <?php endif; ?>
     <a href="gestion.html">Regresar</a>
 </body>

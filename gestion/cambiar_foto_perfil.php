@@ -1,9 +1,9 @@
 <?php
 // Datos de conexión a MySQL
-$host = "localhost";
+$host = "servidorcit0.mysql.database.azure.com";
 $dbname = "escuela";
-$user = "root";
-$password = "";
+$user = "alana";
+$password = "Losdelaesquina5";
 
 // Crear la conexión
 $conn = new mysqli($host, $user, $password, $dbname);
@@ -47,9 +47,9 @@ $conn->close();
 
 <body>
     <?php if (!empty($success_message)) : ?>
-    <p style="color: green;"><?php echo $success_message; ?></p>
+        <p style="color: green;"><?php echo $success_message; ?></p>
     <?php elseif (!empty($error_message)) : ?>
-    <p style="color: red;"><?php echo $error_message; ?></p>
+        <p style="color: red;"><?php echo $error_message; ?></p>
     <?php endif; ?>
     <a href="gestion.html">Regresar</a>
 </body>

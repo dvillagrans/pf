@@ -2,13 +2,17 @@
 session_start(); // Inicia la sesión al principio del archivo
 
 // Datos de conexión a MySQL
-$host = "localhost";
+$host = "servidorcit0.mysql.database.azure.com";
 $dbname = "escuela";
-$user = "root";
-$password = "";
+$user = "alana";
+$password = "Losdelaesquina5";
+
+// Mostrar errores para depuración
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
 
 // Crear la conexión
-$conn = new mysqli($host, $user, $password, $dbname);
+$conn = new mysqli($host, $user, $password, $dbname, 3306);
 
 // Verificar la conexión
 if ($conn->connect_error) {
@@ -27,6 +31,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if (!$result) {
         die("Error en la consulta: " . $conn->error);
+    }
+
+    // Verificación adicional para el gestor
+    if ($boleta === '0000000000' && $contrasena === 'admin') {
+        header("Location: gestion/gestion.html");
+        exit(); // Asegúrate de llamar a exit() después de header()
     }
 
     // Si el usuario y la contraseña son correctos, redirige a la página principal
@@ -63,7 +73,7 @@ $conn->close();
         <button type="submit">Iniciar Sesión</button>
     </form>
     <?php if (!empty($error_message)) : ?>
-    <p style="color: red;"><?php echo $error_message; ?></p>
+        <p style="color: red;"><?php echo $error_message; ?></p>
     <?php endif; ?>
 </body>
 
